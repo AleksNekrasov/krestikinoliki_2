@@ -23,32 +23,40 @@ bool correct(std::string sumOfRows)
 // Проверка по горизонтали
 std::string horizontal(std::string sumOfRows)
 {
+    int x = 0;
+    int o = 0;
+    for (int i = 0; i < sumOfRows.length(); i++)
+    {
+        if (sumOfRows[i] == 'X') x++;
+        if (sumOfRows[i] == 'O') o++;
+    }
+
     int flag = 0; // флажок корректности
     std::string result = "";
 
-    if (sumOfRows[0] == sumOfRows[1] && sumOfRows[0] == sumOfRows[2] && sumOfRows[0] == 'X') {
+    if (sumOfRows[0] == sumOfRows[1] && sumOfRows[0] == sumOfRows[2] && sumOfRows[0] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[0] == sumOfRows[1] && sumOfRows[0] == sumOfRows[2] && sumOfRows[0] == 'O') {
+    if (sumOfRows[0] == sumOfRows[1] && sumOfRows[0] == sumOfRows[2] && sumOfRows[0] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
 
-    if (sumOfRows[3] == sumOfRows[4] && sumOfRows[3] == sumOfRows[5] && sumOfRows[3] == 'X') {
+    if (sumOfRows[3] == sumOfRows[4] && sumOfRows[3] == sumOfRows[5] && sumOfRows[3] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[3] == sumOfRows[4] && sumOfRows[3] == sumOfRows[5] && sumOfRows[3] == 'O') {
+    if (sumOfRows[3] == sumOfRows[4] && sumOfRows[3] == sumOfRows[5] && sumOfRows[3] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
 
-    if (sumOfRows[6] == sumOfRows[7] && sumOfRows[6] == sumOfRows[8] && sumOfRows[6] == 'X') {
+    if (sumOfRows[6] == sumOfRows[7] && sumOfRows[6] == sumOfRows[8] && sumOfRows[6] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[6] == sumOfRows[7] && sumOfRows[6] == sumOfRows[8] && sumOfRows[6] == 'O') {
+    if (sumOfRows[6] == sumOfRows[7] && sumOfRows[6] == sumOfRows[8] && sumOfRows[6] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
@@ -60,32 +68,40 @@ std::string horizontal(std::string sumOfRows)
 // ПРОВЕРКА ПО ВЕРТИКАЛИ
 std::string vertical(std::string sumOfRows)
 {
+    int x = 0;
+    int o = 0;
+    for (int i = 0; i < sumOfRows.length(); i++)
+    {
+        if (sumOfRows[i] == 'X') x++;
+        if (sumOfRows[i] == 'O') o++;
+    }
+
     int flag = 0; // флажок корректности
     std::string result = "";
 
-    if (sumOfRows[0] == sumOfRows[3] && sumOfRows[0] == sumOfRows[6] && sumOfRows[0] == 'X') {
+    if (sumOfRows[0] == sumOfRows[3] && sumOfRows[0] == sumOfRows[6] && sumOfRows[0] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[0] == sumOfRows[3] && sumOfRows[0] == sumOfRows[6] && sumOfRows[0] == 'O') {
+    if (sumOfRows[0] == sumOfRows[3] && sumOfRows[0] == sumOfRows[6] && sumOfRows[0] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
 
-    if (sumOfRows[1] == sumOfRows[4] && sumOfRows[1] == sumOfRows[7] && sumOfRows[1] == 'X') {
+    if (sumOfRows[1] == sumOfRows[4] && sumOfRows[1] == sumOfRows[7] && sumOfRows[1] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[1] == sumOfRows[4] && sumOfRows[1] == sumOfRows[7] && sumOfRows[1] == 'O') {
+    if (sumOfRows[1] == sumOfRows[4] && sumOfRows[1] == sumOfRows[7] && sumOfRows[1] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
 
-    if (sumOfRows[2] == sumOfRows[5] && sumOfRows[2] == sumOfRows[8] && sumOfRows[2] == 'X') {
+    if (sumOfRows[2] == sumOfRows[5] && sumOfRows[2] == sumOfRows[8] && sumOfRows[2] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[2] == sumOfRows[5] && sumOfRows[2] == sumOfRows[8] && sumOfRows[2] == 'O') {
+    if (sumOfRows[2] == sumOfRows[5] && sumOfRows[2] == sumOfRows[8] && sumOfRows[2] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
@@ -97,14 +113,21 @@ std::string vertical(std::string sumOfRows)
 // ПРОВЕРКА ПО ГЛАВНОЙ ДИАГОНАЛИ
 std::string first_diagonal(std::string sumOfRows)
 {
+    int x = 0;
+    int o = 0;
+    for (int i = 0; i < sumOfRows.length(); i++)
+    {
+        if (sumOfRows[i] == 'X') x++;
+        if (sumOfRows[i] == 'O') o++;
+    }
     int flag = 0;
     std::string result = "";
 
-    if (sumOfRows[0] == sumOfRows[4] && sumOfRows[0] == sumOfRows[8] && sumOfRows[0] == 'X') {
+    if (sumOfRows[0] == sumOfRows[4] && sumOfRows[0] == sumOfRows[8] && sumOfRows[0] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[0] == sumOfRows[4] && sumOfRows[0] == sumOfRows[8] && sumOfRows[0] == 'O') {
+    if (sumOfRows[0] == sumOfRows[4] && sumOfRows[0] == sumOfRows[8] && sumOfRows[0] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
@@ -116,14 +139,21 @@ std::string first_diagonal(std::string sumOfRows)
 // ПРОВЕРКА ПО ВТОРОСТЕПЕННОЙ ДИАГОНАЛИ
 std::string second_diagonal(std::string sumOfRows)
 {
+    int x = 0;
+    int o = 0;
+    for (int i = 0; i < sumOfRows.length(); i++)
+    {
+        if (sumOfRows[i] == 'X') x++;
+        if (sumOfRows[i] == 'O') o++;
+    }
     int flag = 0;
     std::string result = "";
 
-    if (sumOfRows[2] == sumOfRows[4] && sumOfRows[2] == sumOfRows[6] && sumOfRows[2] == 'X') {
+    if (sumOfRows[2] == sumOfRows[4] && sumOfRows[2] == sumOfRows[6] && sumOfRows[2] == 'X' && x - o == 1) {
         result += 'X';
         flag++;
     }
-    if (sumOfRows[2] == sumOfRows[4] && sumOfRows[2] == sumOfRows[6] && sumOfRows[2] == 'O') {
+    if (sumOfRows[2] == sumOfRows[4] && sumOfRows[2] == sumOfRows[6] && sumOfRows[2] == 'O' && x - o == 0) {
         result += 'O';
         flag++;
     }
